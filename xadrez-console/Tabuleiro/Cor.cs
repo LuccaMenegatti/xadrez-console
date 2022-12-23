@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
     enum Cor
     {
+
         Branca,
         Preta,
         Amarela,
         Azul,
-        Verde,
         Vermelha,
-        Laranja, 
-        Rosa
+        Verde,
+        Laranja
     }
 }

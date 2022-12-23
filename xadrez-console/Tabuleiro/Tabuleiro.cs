@@ -1,14 +1,10 @@
-﻿using System;
-using tabuleiro;
-using xadrez;
-
-namespace tabuleiro
+﻿namespace tabuleiro
 {
-    internal class Tabuleiro
+    class Tabuleiro
     {
+
         public int linhas { get; set; }
         public int colunas { get; set; }
-
         private Peca[,] pecas;
 
         public Tabuleiro(int linhas, int colunas)
@@ -40,16 +36,13 @@ namespace tabuleiro
             {
                 throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
-            else
-            {
-                pecas[pos.linha, pos.coluna] = p;
-                p.posicao = pos;
-            }
+            pecas[pos.linha, pos.coluna] = p;
+            p.posicao = pos;
         }
 
         public Peca retirarPeca(Posicao pos)
         {
-            if(peca(pos) == null)
+            if (peca(pos) == null)
             {
                 return null;
             }
@@ -61,21 +54,18 @@ namespace tabuleiro
 
         public bool posicaoValida(Posicao pos)
         {
-            if(pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
             {
                 return false;
             }
-            else
-            {
-                return true;
-            }
+            return true;
         }
 
         public void validarPosicao(Posicao pos)
         {
             if (!posicaoValida(pos))
             {
-                throw new TabuleiroException("Posição Invalida!");
+                throw new TabuleiroException("Posição inválida!");
             }
         }
     }

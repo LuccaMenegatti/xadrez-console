@@ -1,9 +1,10 @@
-﻿using System;
-using tabuleiro;
+﻿using tabuleiro;
+
 namespace xadrez
 {
-    internal class PosicaoXadrez
+    class PosicaoXadrez
     {
+
         public char coluna { get; set; }
         public int linha { get; set; }
 
